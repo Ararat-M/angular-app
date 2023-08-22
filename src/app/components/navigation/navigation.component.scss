@@ -1,0 +1,13 @@
+.nav-panel {
+  display: flex;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: 8px 12px;
+  justify-content: space-between;
+  align-items: center;
+  background: #171d25;
+}
+
+.links {
+  font: var(--font-l);
+}

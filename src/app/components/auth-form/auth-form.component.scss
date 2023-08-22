@@ -1,0 +1,29 @@
+.auth-form {
+  display: flex;
+  column-gap: 14px;
+}
+
+.input {
+  padding: 4px 6px;
+  background-color: white;
+  border: 1px solid rgb(106 106 106 / 40%);
+  border-radius: 5px;
+  color: #333;
+
+  &::placeholder {
+    opacity: 0.6;
+  }
+}
+
+.btn {
+  color: #0dcaf0;
+  border: 1px solid #0dcaf0;
+  border-radius: 5px;
+  padding: 4px 8px;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out;
+
+    &:hover {
+      background-color: #0dcaf0;
+      color: black;
+    }
+}
