@@ -1,7 +1,8 @@
 <nav class="nav-panel">
   <div class="links">
     <a href="">Главная</a>
+    <a *ngIf="auth" href="">AUTH</a>
   </div>
   
-  <app-auth-form ></app-auth-form>
+  <app-auth-form *ngIf="!auth" (authEvent)="changeAuthState($event)"></app-auth-form>
 </nav>

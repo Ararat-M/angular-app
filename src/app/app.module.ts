@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [

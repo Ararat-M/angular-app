@@ -8,7 +8,7 @@ export class UserService {
 
   constructor() { }
 
-  static register(user: IUser) {
+  register(user: IUser) {
     const data = localStorage.getItem("users");
 
     if (!data) {

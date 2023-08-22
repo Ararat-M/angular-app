@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-auth-form',
@@ -9,6 +8,12 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./auth-form.component.scss']
 })
 export class AuthFormComponent {
+  constructor(
+    private authService: AuthService
+  ) { }
+
+  @Output() authEvent = new EventEmitter<boolean>();
+
   form = new FormGroup({
     username: new FormControl<string>("", [
       Validators.required
@@ -18,9 +23,10 @@ export class AuthFormComponent {
     ])
   })
 
-  constructor() { 
-    
+  submit() {
+    this.authEvent.emit(this.authService.login({ 
+      username: this.form.value.username as string, 
+      password: this.form.value.password as string
+    }));
   }
-
-  submit() { }
 }

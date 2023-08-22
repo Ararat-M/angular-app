@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -6,6 +6,18 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent {
-  
+export class NavigationComponent implements OnInit {
+  constructor(
+    private authService: AuthService
+  ) { }
+
+  auth = false
+
+  ngOnInit(): void {
+    this.auth = this.authService.init()
+  }
+
+  changeAuthState(authState: boolean) {
+    this.auth = authState;
+  }
 }

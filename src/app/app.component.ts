@@ -7,7 +7,13 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+  constructor(
+    private userService: UserService
+  ) {
+
+  }
   ngOnInit(): void {
-    UserService.register({ username: "admin", password: "admin123"});
+    this.userService.register({ username: "admin", password: "admin123"});
   }
 }
