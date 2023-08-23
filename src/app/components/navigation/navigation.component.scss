@@ -18,13 +18,13 @@
 }
 
 .logout-btn {
-  color: hsla(0, 59%, 41%, 0.5);
-  border: 1px solid hsla(0, 59%, 41%, 0.5);
+  color: rgb(166 43 43);
+  border: 1px solid rgb(166 43 43);
   border-radius: 5px;
   padding: 4px 8px;
 
     &:hover {
-      background-color: hsla(0, 59%, 41%, 0.5);
-      color: black;
+      background-color: rgb(166 43 43);
+      color: #fff;
     }
 }

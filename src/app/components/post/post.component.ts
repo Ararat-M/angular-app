@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { IPost } from 'src/app/models/post';
 
 @Component({
@@ -7,5 +8,13 @@ import { IPost } from 'src/app/models/post';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
+  constructor(
+    public router: Router
+  ) { }
+
   @Input() post: IPost
+
+  gotoDetail(): void {
+    this.router.navigate(['/posts', this.post.id]);
+  }
 }
