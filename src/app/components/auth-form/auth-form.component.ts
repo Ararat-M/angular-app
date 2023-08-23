@@ -12,8 +12,6 @@ export class AuthFormComponent {
     private authService: AuthService
   ) { }
 
-  @Output() authEvent = new EventEmitter<boolean>();
-
   form = new FormGroup({
     username: new FormControl<string>("", [
       Validators.required
@@ -24,9 +22,9 @@ export class AuthFormComponent {
   })
 
   submit() {
-    this.authEvent.emit(this.authService.login({ 
-      username: this.form.value.username as string, 
+    this.authService.login({
+      username: this.form.value.username as string,
       password: this.form.value.password as string
-    }));
+    })
   }
 }

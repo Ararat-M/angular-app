@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from './services/user.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,12 @@ import { UserService } from './services/user.service';
 export class AppComponent implements OnInit {
 
   constructor(
-    private userService: UserService
-  ) {
+    private userService: UserService,
+    private authService: AuthService
+  ) { }
 
-  }
   ngOnInit(): void {
     this.userService.register({ username: "admin", password: "admin123"});
+    this.authService.init();
   }
 }

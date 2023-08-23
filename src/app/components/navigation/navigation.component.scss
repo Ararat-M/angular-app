@@ -1,13 +1,30 @@
-.nav-panel {
-  display: flex;
+.nav-container {
   width: 100%;
   height: var(--navbar-height);
   padding: 8px 12px;
+  background-color: var(--navbar-bg-color);
+}
+
+.nav-panel {
+  margin: 0 auto;
+  width: 85%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #171d25;
 }
 
 .links {
   font: var(--font-l);
+}
+
+.logout-btn {
+  color: hsla(0, 59%, 41%, 0.5);
+  border: 1px solid hsla(0, 59%, 41%, 0.5);
+  border-radius: 5px;
+  padding: 4px 8px;
+
+    &:hover {
+      background-color: hsla(0, 59%, 41%, 0.5);
+      color: black;
+    }
 }

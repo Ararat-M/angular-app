@@ -1,23 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
+
   constructor(
-    private authService: AuthService
+    public authService: AuthService
   ) { }
-
-  auth = false
-
-  ngOnInit(): void {
-    this.auth = this.authService.init()
-  }
-
-  changeAuthState(authState: boolean) {
-    this.auth = authState;
-  }
 }
