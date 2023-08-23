@@ -1,6 +1,4 @@
-<h1 *ngIf="!(authService.isAuth$ | async)"> Please Sign In to see posts! </h1>
-
-<div *ngIf="authService.isAuth$ | async" class="post-list">
+<div class="post-list">
   <app-post *ngFor="let post of postService.posts"
     [post]="post"
   ></app-post>

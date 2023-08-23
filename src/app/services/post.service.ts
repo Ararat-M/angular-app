@@ -22,7 +22,7 @@ export class PostService {
     return this.http.get<IPost[]>(this.url).pipe(tap(posts => this.posts = posts))
   }
 
-  getById(id: string) {
+  getById(id: number) {
     return this.http.get<IPost>(this.url + `/${id}`)
   }
 }

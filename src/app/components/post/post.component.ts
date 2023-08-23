@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPost } from 'src/app/models/post';
 
@@ -14,7 +14,7 @@ export class PostComponent {
 
   @Input() post: IPost
 
-  gotoDetail(): void {
+  goToDetail(): void {
     this.router.navigate(['/posts', this.post.id]);
   }
 }

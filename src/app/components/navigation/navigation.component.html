@@ -5,6 +5,7 @@
     </div>
     
     <app-auth-form *ngIf="!(authService.isAuth$ | async)"></app-auth-form>
+    
     <button 
       *ngIf="authService.isAuth$ | async"
       (click)="authService.logout()"
