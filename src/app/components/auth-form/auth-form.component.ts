@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,10 +10,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AuthFormComponent {
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private snackbar: MatSnackBar
   ) { }
-
-  authFailed = false;
 
   form = new FormGroup({
     username: new FormControl<string>("", [
@@ -24,18 +24,25 @@ export class AuthFormComponent {
   })
 
   submit() {
+    if (!(this.form.controls.username.value && this.form.controls.password.value)) {
+      this.snackbar.open("введите имя пользователя и пароль", "", {
+        duration: 3000,
+        panelClass: ["snackbar-error"]
+      })
+
+      return
+    }
+
     this.authService.login({
       username: this.form.value.username as string,
       password: this.form.value.password as string
     })
     
-    
     if (!this.authService.isAuth$.value) {
-      this.authFailed = true
-      
-      return
+      this.snackbar.open("неверное имя пользователя или пароль", "", {
+        duration: 3000,
+        panelClass: ["snackbar-error"]
+      })
     }
-    
-    this.authFailed = false
   }
 }

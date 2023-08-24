@@ -10,7 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from './components/post/post.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import PostDetailsComponent from './pages/post-details/post-details.component';
-import { LoaderComponent } from './shared/ui/loader/loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -19,15 +21,17 @@ import { LoaderComponent } from './shared/ui/loader/loader.component';
     AuthFormComponent,
     PostComponent,
     MainPageComponent,
-    PostDetailsComponent,
-    LoaderComponent
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
