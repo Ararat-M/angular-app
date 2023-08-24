@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IPost } from 'src/app/models/post';
@@ -9,7 +9,7 @@ import { PostService } from 'src/app/services/post.service';
   templateUrl: './post-details.component.html',
   styleUrls: ['./post-details.component.scss']
 })
-export default class PostDetailsComponent implements OnInit {
+export default class PostDetailsComponent implements OnInit, OnDestroy {
   constructor(
     public postService: PostService,
     private activatedroute: ActivatedRoute
@@ -32,7 +32,7 @@ export default class PostDetailsComponent implements OnInit {
       this.loading = false
     })
   }
-
+  
   ngOnDestroy() {
     this.routeSub.unsubscribe();
   }

@@ -1,10 +1,10 @@
 <app-navigation></app-navigation>
 
 <h1
-  *ngIf="!(authService.isAuth$ | async)"
+  *ngIf="(authService.isAuth$ | async) === false"
   class="title"
 >
-Please Sign In to see posts!
+  Please Sign In to see posts!
 </h1>
 
 <router-outlet *ngIf="authService.isAuth$ | async"></router-outlet>

@@ -4,7 +4,7 @@
       <a routerLink="/">Главная</a>
     </div>
     
-    <app-auth-form *ngIf="!(authService.isAuth$ | async)"></app-auth-form>
+    <app-auth-form *ngIf="(authService.isAuth$ | async) === false"></app-auth-form>
     
     <button 
       *ngIf="authService.isAuth$ | async"

@@ -6,8 +6,6 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor() { }
-
   isAuth$ = new BehaviorSubject<boolean>(false);
 
   init() {
@@ -25,7 +23,7 @@ export class AuthService {
 
     const users: IUser[] = [JSON.parse(data)];
 
-    for (let item of users) {
+    for (const item of users) {
       if (item.username == user.username && item.password == user.password) {
         localStorage.setItem("currentUser", JSON.stringify(user))
         
