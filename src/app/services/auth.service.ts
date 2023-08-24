@@ -28,6 +28,7 @@ export class AuthService {
     for (let item of users) {
       if (item.username == user.username && item.password == user.password) {
         localStorage.setItem("currentUser", JSON.stringify(user))
+        
         return this.isAuth$.next(true)
       }
     }

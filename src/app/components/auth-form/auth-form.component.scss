@@ -27,3 +27,15 @@
       color: black;
     }
 }
+
+.input {
+  &.ng-touched{
+    &.ng-invalid {
+      border-color: red;
+    }
+  }
+
+  &.failed {
+    border-color: red;
+  }
+}

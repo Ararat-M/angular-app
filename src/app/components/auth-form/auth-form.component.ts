@@ -12,6 +12,8 @@ export class AuthFormComponent {
     private authService: AuthService
   ) { }
 
+  authFailed = false;
+
   form = new FormGroup({
     username: new FormControl<string>("", [
       Validators.required
@@ -26,5 +28,14 @@ export class AuthFormComponent {
       username: this.form.value.username as string,
       password: this.form.value.password as string
     })
+    
+    
+    if (!this.authService.isAuth$.value) {
+      this.authFailed = true
+      
+      return
+    }
+    
+    this.authFailed = false
   }
 }
