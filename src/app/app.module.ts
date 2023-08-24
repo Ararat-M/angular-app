@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from './components/post/post.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import PostDetailsComponent from './pages/post-details/post-details.component';
+import { LoaderComponent } from './shared/ui/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import PostDetailsComponent from './pages/post-details/post-details.component';
     AuthFormComponent,
     PostComponent,
     MainPageComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

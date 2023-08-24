@@ -1,4 +1,5 @@
 .post-details {
+  position: relative;
   max-width: 60%;
   margin: 24px auto;
   padding: 18px 22px;
@@ -27,4 +28,34 @@
 
 .post-id {
   color: rgba(255, 255, 255, 0.2);
+}
+
+.loader {
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+}
+
+.btn {
+  display: block;
+  width: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+
+    &::before{
+      content: "<";
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 10px;
+      left: 6px;
+      bottom: 0;
+      right: 0;
+    }
 }

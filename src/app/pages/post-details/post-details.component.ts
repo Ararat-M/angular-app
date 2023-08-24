@@ -16,15 +16,21 @@ export default class PostDetailsComponent implements OnInit {
   ) { }
 
   private routeSub: Subscription
+  loading: boolean;
   postId: number
-  post: IPost = {userId: 0, id: 0, title: "", body: ""}
+  post: IPost 
 
   ngOnInit(): void {
+    this.loading = true
+
     this.routeSub = this.activatedroute.params.subscribe(params => {
       this.postId = params["id"]
     });
     
-    this.routeSub = this.postService.getById(this.postId).subscribe(post => this.post = post)
+    this.routeSub = this.postService.getById(this.postId).subscribe(post => {
+      this.post = post
+      this.loading = false
+    })
   }
 
   ngOnDestroy() {

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IPost } from '../models/post';
-import { tap } from 'rxjs';
+import { delay, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
