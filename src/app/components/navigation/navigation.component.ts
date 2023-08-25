@@ -11,6 +11,5 @@ export class NavigationComponent {
 
   constructor(
     public authService: AuthService,
-    private router: Router
   ) { }
 }

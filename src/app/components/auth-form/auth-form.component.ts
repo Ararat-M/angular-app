@@ -22,7 +22,8 @@ export class AuthFormComponent {
       Validators.email
     ]),
     password: new FormControl<string>("", [
-      Validators.required
+      Validators.required,
+      Validators.minLength(6)
     ])
   })
 
@@ -43,14 +44,14 @@ export class AuthFormComponent {
   }
 
   submit() { 
-    if (this.email && this.password) {
+    if (!this.emailControl.errors && !this.passwordControl.errors) {
       if (!this.authService.login(this.email, this.password)) {
-        this.snackbar.open("неверное имя пользователя или пароль", "", {
+        this.snackbar.open("неверный email или пароль", "", {
           duration: 3000,
           panelClass: ["snackbar-error"]
         })
       } else {
-        this.router.navigateByUrl("posts")
+        this.router.navigateByUrl("")
       }
     }
   }

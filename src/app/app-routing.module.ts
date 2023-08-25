@@ -6,8 +6,8 @@ import {authGuard} from "./guards/auth.guard";
 import {AuthComponent} from "./components/auth/auth.component";
 
 const routes: Routes = [
-  { path: "", component: AuthComponent, },
-  { path: "posts", component: PostListComponent, canActivate: [authGuard] },
+  { path: "", component: PostListComponent, canActivate: [authGuard] },
+  { path: "auth", component: AuthComponent},
   { path: "posts/:id", component: PostDetailComponent}
 ];
 
