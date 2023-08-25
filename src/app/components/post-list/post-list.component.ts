@@ -10,8 +10,12 @@ export class PostListComponent implements OnInit {
   constructor(
     public postService: PostService
   ) { }
+  
+  loading = true;
 
   ngOnInit(): void {
-    this.postService.getAll().subscribe()
+    this.postService.getAll().subscribe(() => {
+      this.loading = false
+    })
   }
 }

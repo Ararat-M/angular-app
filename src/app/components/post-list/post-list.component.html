@@ -1,5 +1,9 @@
-<div class="post-list">
-  <app-post *ngFor="let post of postService.posts"
-    [post]="post"
-  ></app-post>
-</div>
+<mat-progress-spinner style="margin: 30px auto;" mode="indeterminate" *ngIf="loading else content"></mat-progress-spinner>
+
+<ng-template #content>
+  <div class="post-list">
+    <app-post *ngFor="let post of postService.posts"
+      [post]="post"
+    ></app-post>
+  </div>
+</ng-template>

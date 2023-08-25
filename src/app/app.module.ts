@@ -13,6 +13,10 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {AuthComponent} from "./components/auth/auth.component";
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AuthFormComponent,
     PostComponent,
     PostListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

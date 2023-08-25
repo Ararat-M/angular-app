@@ -13,9 +13,4 @@ export class NavigationComponent {
     public authService: AuthService,
     private router: Router
   ) { }
-
-  logout() {
-    this.authService.logout()
-    this.router.navigateByUrl("/")
-  }
 }

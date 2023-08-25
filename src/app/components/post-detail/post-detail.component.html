@@ -1,9 +1,11 @@
-<mat-progress-spinner mode="indeterminate" *ngIf="loading" class="loader"></mat-progress-spinner>
+<mat-progress-spinner style="margin: 30px auto;" mode="indeterminate" *ngIf="loading else content"></mat-progress-spinner>
 
-<div *ngIf="!loading" class="post-details">
-  <a class="back-link" routerLink="/"> </a>
-  <span class="post-user-id"> user: {{ post.userId }} </span>
-  <h1 class="post-title"> {{ post.title }} </h1>
-  <p class="post-body"> {{ post.body }} </p>
-  <span class="post-id"> {{ post.id }} </span>
-</div>
+<ng-template #content>
+  <div class="post-details">
+    <a class="back-link" routerLink="/"> </a>
+    <span class="post-user-id"> user: {{ post.userId }} </span>
+    <h1 class="post-title"> {{ post.title }} </h1>
+    <p class="post-body"> {{ post.body }} </p>
+    <span class="post-id"> {{ post.id }} </span>
+  </div>
+</ng-template>

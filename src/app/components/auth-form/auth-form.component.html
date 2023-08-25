@@ -1,19 +1,31 @@
-<form
-    [formGroup]="form"
-    class="auth-form"
-    (ngSubmit)="submit()"
-  >
-  <input
-    class="input"
-    type="text"
-    placeholder="Email"
-    formControlName="email"
+<form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      required
+      placeholder="Email"
+      [formControl]="emailControl"
     >
-  <input
-    class="input"
-    type="password"
-    placeholder="Пароль"
-    formControlName="password"
-  >
-  <button class="btn" type="submit">Sign In</button>
+    <mat-error *ngIf="form.controls.email.hasError('required')">
+      Пожалуйста, введите email
+    </mat-error>
+    <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+      Пожалуйста, введите корректный email
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Пароль</mat-label>
+    <input 
+      matInput
+      required
+      type="password"
+      placeholder="пароль"
+      [formControl]="passwordControl"
+    >
+    <mat-error *ngIf="form.controls.email.hasError('required')">
+      Пожалуйста, введите пароль
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="btn" type="submit">Sign In</button>
 </form>
