@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { IPost } from 'src/app/models/post';
+import { IPost } from 'src/app/interfaces/post';
 
 @Component({
   selector: 'app-post',

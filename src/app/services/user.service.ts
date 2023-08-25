@@ -1,22 +1,28 @@
 import { Injectable } from '@angular/core';
-import { IUser } from '../models/user';
+import { IUser } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  constructor() {
+    console.log('UserService')
+    this.register({ email: "admin@test.com", password: "admin123"})
+  }
+
   register(user: IUser) {
-    const data = localStorage.getItem("users");
+    console.log('register user')
+    const data = localStorage.getItem("users")
 
     if (!data) {
       localStorage.setItem("users", JSON.stringify(user))
-      return
+      return;
     }
 
     const users: IUser[] = [JSON.parse(data)];
-    
+
     for (const item of users) {
-      if (item.username == user.username) {
+      if (item.email == user.email) {
         return;
       }
     }

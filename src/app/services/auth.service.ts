@@ -1,39 +1,36 @@
 import { Injectable } from '@angular/core';
-import { IUser } from '../models/user';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isAuth$ = new BehaviorSubject<boolean>(false);
+  isLoggedIn = false;
 
-  init() {
-    const data = localStorage.getItem("currentUser");
-
-    if (!data) return this.isAuth$.next(false);
-
-    this.isAuth$.next(true)
+  constructor() {
+    this.isLoggedIn = !!this.getAuthToken()
   }
 
-  login(user: IUser) {
-    const data = localStorage.getItem("users");
+  getAuthToken() {
+    return localStorage.getItem('token')
+  }
 
-    if (!data) return;
+  setAuthToken(token: string) {
+    this.isLoggedIn = true
+    localStorage.setItem('token', token)
+  }
 
-    const users: IUser[] = [JSON.parse(data)];
-
-    for (const item of users) {
-      if (item.username == user.username && item.password == user.password) {
-        localStorage.setItem("currentUser", JSON.stringify(user))
-        
-        return this.isAuth$.next(true)
-      }
+  login(email: string, password: string) {
+    // const user = localStorage.getItem('users')
+    // Проверяем данные без сервера
+    if (email === 'test@gmail.com' && password === 'test123') {
+      this.setAuthToken('asdasdwercwecfwdfv')
+      return true
     }
+    return false
   }
 
   logout() {
-    this.isAuth$.next(false)
-    localStorage.removeItem("currentUser")
+    this.isLoggedIn = false
+    localStorage.removeItem("token")
   }
 }

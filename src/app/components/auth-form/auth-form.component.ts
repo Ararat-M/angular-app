@@ -15,7 +15,7 @@ export class AuthFormComponent {
   ) { }
 
   form = new FormGroup({
-    username: new FormControl<string>("", [
+    email: new FormControl<string>("", [
       Validators.required
     ]),
     password: new FormControl<string>("", [
@@ -23,23 +23,24 @@ export class AuthFormComponent {
     ])
   })
 
+  get email(): string {
+    return this.form.controls.email.value ?? ''
+  }
+
+  get password(): string {
+    return this.form.controls.password.value ?? ''
+  }
+
   submit() {
-    if (!(this.form.controls.username.value && this.form.controls.password.value)) {
+    if (this.email && this.password) {
+      if (!this.authService.login(this.email, this.password)) {
+        this.snackbar.open("неверное имя пользователя или пароль", "", {
+          duration: 3000,
+          panelClass: ["snackbar-error"]
+        })
+      }
+    } else {
       this.snackbar.open("введите имя пользователя и пароль", "", {
-        duration: 3000,
-        panelClass: ["snackbar-error"]
-      })
-
-      return
-    }
-
-    this.authService.login({
-      username: this.form.value.username as string,
-      password: this.form.value.password as string
-    })
-    
-    if (!this.authService.isAuth$.value) {
-      this.snackbar.open("неверное имя пользователя или пароль", "", {
         duration: 3000,
         panelClass: ["snackbar-error"]
       })

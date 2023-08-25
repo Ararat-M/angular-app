@@ -1,11 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { MainPageComponent } from "./pages/main-page/main-page.component";
-import PostDetailsComponent from "./pages/post-details/post-details.component";
+import { PostListComponent } from "./components/post-list/post-list.component";
+import { PostDetailComponent } from "./components/post-detail/post-detail.component";
+import {authGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
-  { path: "", component: MainPageComponent },
-  { path: "posts/:id", component: PostDetailsComponent }
+  { path: "", component: PostListComponent, canActivate: [authGuard] },
+  { path: "posts/:id", component: PostDetailComponent, canDeactivate: [authGuard]}
 ];
 
 @NgModule({

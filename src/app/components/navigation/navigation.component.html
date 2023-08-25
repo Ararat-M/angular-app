@@ -1,17 +1,18 @@
 <div class="nav-container">
   <nav class="nav-panel">
     <div class="links">
-      <a routerLink="/">Главная</a>
+      <a routerLink="/">Main</a>
     </div>
-    
-    <app-auth-form *ngIf="(authService.isAuth$ | async) === false"></app-auth-form>
-    
-    <button 
-      *ngIf="authService.isAuth$ | async"
-      (click)="logout()"
-      class="logout-btn"
-    >
-      Logout
-    </button>
+
+    <app-auth-form *ngIf="!authService.isLoggedIn else logout"></app-auth-form>
+
+    <ng-template #logout>
+      <button
+        (click)="authService.logout()"
+        class="logout-btn"
+      >
+        Logout
+      </button>
+    </ng-template>
   </nav>
 </div>

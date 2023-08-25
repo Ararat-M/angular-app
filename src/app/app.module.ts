@@ -8,8 +8,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostComponent } from './components/post/post.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-import PostDetailsComponent from './pages/post-details/post-details.component';
+import { PostListComponent } from './components/post-list/post-list.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -20,8 +20,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     NavigationComponent,
     AuthFormComponent,
     PostComponent,
-    MainPageComponent,
-    PostDetailsComponent
+    PostListComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
