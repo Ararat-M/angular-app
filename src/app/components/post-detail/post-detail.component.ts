@@ -14,19 +14,19 @@ export class PostDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) { }
   loading: boolean;
-  postId: number
-  post: IPost
+  postId: number;
+  post: IPost;
 
   ngOnInit(): void {
-    this.loading = true
+    this.loading = true;
 
     this.activatedRoute.params.subscribe(params => {
-      this.postId = params["id"]
+      this.postId = params['id'];
     });
 
     this.postService.getById(this.postId).subscribe(post => {
-      this.post = post
-      this.loading = false
-    })
+      this.post = post;
+      this.loading = false;
+    });
   }
 }

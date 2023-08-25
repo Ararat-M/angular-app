@@ -24,7 +24,6 @@ button {
   border: none;
   background: none;
   cursor: pointer;
-  transition: color .15s ease-in-out, background-color .15s ease-in-out;
 }
 
 a {
@@ -44,8 +43,3 @@ a {
       --mdc-snackbar-supporting-text-color: rgb(209, 31, 31);
     }
 }
-
-.progress-spinner-container {
-  background: red;
-}
-

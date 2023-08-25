@@ -1,8 +1,8 @@
 .nav-container {
   width: 100%;
   padding: 0.75rem 0;
-  background-color: var(--navbar-bg-color);
-  margin-bottom: 1rem;
+  background-color: #171d25;
+  margin-bottom: 1.25rem;
 }
 
 .nav-panel {
@@ -14,10 +14,4 @@
 
 .links {
   font: var(--font-l);
-}
-
-.logout-btn {
-  color: rgb(166 43 43);
-  border-radius: 5px;
-  padding: 4px 8px;
 }

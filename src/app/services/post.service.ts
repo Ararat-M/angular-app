@@ -12,17 +12,17 @@ export class PostService {
     private http: HttpClient
   ) { }
 
-  posts: IPost[] = []
+  posts: IPost[] = [];
 
 
-  url = "https://jsonplaceholder.typicode.com/posts"
+  url = 'https://jsonplaceholder.typicode.com/posts';
 
 
   getAll() {
-    return this.http.get<IPost[]>(this.url).pipe(tap(posts => this.posts = posts))
+    return this.http.get<IPost[]>(this.url).pipe(tap(posts => this.posts = posts));
   }
 
   getById(id: number) {
-    return this.http.get<IPost>(this.url + `/${id}`)
+    return this.http.get<IPost>(this.url + `/${id}`);
   }
 }

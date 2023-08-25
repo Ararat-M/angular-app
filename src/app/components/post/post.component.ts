@@ -12,5 +12,5 @@ export class PostComponent {
     public router: Router
   ) { }
 
-  @Input() post: IPost
+  @Input() post: IPost;
 }

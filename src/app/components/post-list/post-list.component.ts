@@ -15,7 +15,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
     this.postService.getAll().subscribe(() => {
-      this.loading = false
-    })
+      this.loading = false;
+    });
   }
 }

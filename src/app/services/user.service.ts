@@ -5,17 +5,13 @@ import { IUser } from '../interfaces/user';
   providedIn: 'root'
 })
 export class UserService {
-  constructor() {
-    console.log('UserService')
-    this.register({ email: "admin@test.com", password: "admin123"})
-  }
 
   register(user: IUser) {
-    console.log('register user')
-    const data = localStorage.getItem("users")
+    console.log('register user');
+    const data = localStorage.getItem('users');
 
     if (!data) {
-      localStorage.setItem("users", JSON.stringify(user))
+      localStorage.setItem('users', JSON.stringify(user));
       return;
     }
 
@@ -27,6 +23,6 @@ export class UserService {
       }
     }
 
-    localStorage.setItem("users", JSON.stringify(user))
+    localStorage.setItem('users', JSON.stringify(user));
   }
 }

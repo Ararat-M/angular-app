@@ -17,18 +17,18 @@ export class AuthFormComponent {
   ) { }
 
   form = new FormGroup({
-    email: new FormControl<string>("", [
+    email: new FormControl<string>('', [
       Validators.required,
       Validators.email
     ]),
-    password: new FormControl<string>("", [
+    password: new FormControl<string>('', [
       Validators.required,
       Validators.minLength(6)
     ])
-  })
+  });
 
   get email(): string {
-    return this.form.controls.email.value ?? ''
+    return this.form.controls.email.value ?? '';
   }
 
   get emailControl() {
@@ -36,7 +36,7 @@ export class AuthFormComponent {
   }
   
   get password(): string {
-    return this.form.controls.password.value ?? ''
+    return this.form.controls.password.value ?? '';
   }
 
   get passwordControl() {
@@ -46,12 +46,12 @@ export class AuthFormComponent {
   submit() { 
     if (!this.emailControl.errors && !this.passwordControl.errors) {
       if (!this.authService.login(this.email, this.password)) {
-        this.snackbar.open("неверный email или пароль", "", {
+        this.snackbar.open('неверный email или пароль', '', {
           duration: 3000,
-          panelClass: ["snackbar-error"]
-        })
+          panelClass: ['snackbar-error']
+        });
       } else {
-        this.router.navigateByUrl("")
+        this.router.navigateByUrl('');
       }
     }
   }

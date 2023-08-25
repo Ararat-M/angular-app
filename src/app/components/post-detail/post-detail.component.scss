@@ -1,17 +1,14 @@
 .link-panel {
   display: flex;
-  color: #ffffff;
   align-items: center;
+  margin-bottom: 0.75rem;
 }
 
 .post-details {
-  position: relative;
-  max-width: 60%;
-  margin: 36px auto;
+  margin: 0 auto;
   padding: 18px 22px;
   background-image: linear-gradient(180deg, #1a4a70 0%, #153052 80%);
   border: 1px solid #26384f;
-  box-shadow: 0 0 5px #000;
   border-radius: 4px;
 
   .post-id {

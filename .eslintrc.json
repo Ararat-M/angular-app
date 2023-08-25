@@ -30,7 +30,11 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "quotes": ["error", "single"],
+        "semi": ["error", "always"],
+        "object-curly-spacing": ["error", "always"],
+        "@typescript-eslint/comma-dangle": "error"
       }
     },
     {
