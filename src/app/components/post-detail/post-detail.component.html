@@ -1,11 +1,23 @@
 <mat-progress-spinner style="margin: 30px auto;" mode="indeterminate" *ngIf="loading else content"></mat-progress-spinner>
 
 <ng-template #content>
-  <div class="post-details">
-    <a class="back-link" routerLink="/"> </a>
-    <span class="post-user-id"> user: {{ post.userId }} </span>
-    <h1 class="post-title"> {{ post.title }} </h1>
-    <p class="post-body"> {{ post.body }} </p>
-    <span class="post-id"> {{ post.id }} </span>
+  <div class="container">
+    <div class="link-panel">
+      <a mat-icon-button routerLink="/">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      </a>
+
+      <mat-icon aria-hidden="false" aria-label="arrow_right_alt" fontIcon="keyboard_arrow_right"></mat-icon>
+      <a mat-button routerLink="/">
+        Посты
+      </a>
+    </div>
+
+    <div class="post-details">
+      <span class="post-user-id"> user: {{ post.userId }} </span>
+      <h1 class="post-title"> {{ post.title }} </h1>
+      <p class="post-body"> {{ post.body }} </p>
+      <span class="post-id"> {{ post.id }} </span>
+    </div>
   </div>
 </ng-template>

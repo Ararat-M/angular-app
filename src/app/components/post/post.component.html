@@ -1,5 +1,5 @@
 <div class="post">
-  <a [routerLink]="'route'" class="post-link" aria-disabled="true" (click)="goToDetail()">
+  <a [routerLink]="['/posts', post.id]" class="post-link" aria-disabled="true">
     <h2>{{ post.title }}</h2>
   </a>
 </div>

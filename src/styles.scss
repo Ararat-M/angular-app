@@ -1,17 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
 @import "./variable";
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-html {
+body {
   height: 100%;
   background-color: var(--app-bg-color);
   font: var(--font-m);
-  color: #ebebeb;;
+  color: #ebebeb;
 }
 
 input,
@@ -34,9 +32,14 @@ a {
   color: #fff;
 }
 
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .mat-mdc-snack-bar-container {
   text-align: center;
-  
+
     &.snackbar-error {
       --mdc-snackbar-supporting-text-color: rgb(209, 31, 31);
     }
@@ -45,3 +48,4 @@ a {
 .progress-spinner-container {
   background: red;
 }
+

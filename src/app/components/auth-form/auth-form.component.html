@@ -1,41 +1,43 @@
-<form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Email</mat-label>
-    <input
-      matInput
-      required
-      placeholder="Email"
-      [formControl]="emailControl"
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        required
+        placeholder="Email"
+        [formControl]="emailControl"
+      >
+      <mat-error *ngIf="emailControl.hasError('required')">
+        Пожалуйста, введите email
+      </mat-error>
+      <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
+        Пожалуйста, введите корректный email
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Пароль</mat-label>
+      <input 
+        matInput
+        required
+        type="password"
+        placeholder="пароль"
+        [formControl]="passwordControl"
+      >
+      <mat-error *ngIf="passwordControl.hasError('required')">
+        Пожалуйста, введите пароль
+      </mat-error>
+      <mat-error *ngIf="passwordControl.hasError('minlength') && !passwordControl.hasError('required')">
+        Минимум 6 символов (введено {{ passwordControl.getError('minlength').actualLength }})
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      type="submit"
     >
-    <mat-error *ngIf="emailControl.hasError('required')">
-      Пожалуйста, введите email
-    </mat-error>
-    <mat-error *ngIf="emailControl.hasError('email') && !emailControl.hasError('required')">
-      Пожалуйста, введите корректный email
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <mat-label>Пароль</mat-label>
-    <input 
-      matInput
-      required
-      type="password"
-      placeholder="пароль"
-      [formControl]="passwordControl"
-    >
-    <mat-error *ngIf="passwordControl.hasError('required')">
-      Пожалуйста, введите пароль
-    </mat-error>
-    <mat-error *ngIf="passwordControl.hasError('minlength') && !passwordControl.hasError('required')">
-      Минимум 6 символов (введено {{ passwordControl.getError('minlength').actualLength }})
-    </mat-error>
-  </mat-form-field>
-  <button
-    mat-raised-button
-    color="primary"
-    class="btn"
-    type="submit"
-  >
-    Войти
-  </button>
-</form>
+      Войти
+    </button>
+  </form>
+</div>

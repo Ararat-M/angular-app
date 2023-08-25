@@ -13,8 +13,4 @@ export class PostComponent {
   ) { }
 
   @Input() post: IPost
-
-  goToDetail(): void {
-    this.router.navigate(['/posts', this.post.id]);
-  }
 }
