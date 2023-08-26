@@ -16,7 +16,7 @@ export class PostService {
 
   posts: IPost[] = [];
   isError = false;
-  url = 'https://jsonplaceholder.typicode.com/pots';
+  url = 'https://jsonplaceholder.typicode.com/posts';
 
   private handleError(error: HttpErrorResponse) {
     this.isError = true;

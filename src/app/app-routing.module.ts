@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'posts', pathMatch: 'full' },
   { path: 'auth', loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule) },
   { path: 'posts', component: PostListComponent, canActivate: [authGuard] },
-  { path: 'posts/:id', loadChildren: () => import('./modules/post-detail/post-detail.module').then(m => m.PostDetailModule), canActivate: [authGuard] }
+  { path: 'posts/:id', loadChildren: () => import('./modules/post-detail/post-detail.module').then(m => m.PostDetailModule), canActivate: [authGuard] },
+  { path: '**', redirectTo: 'posts', pathMatch: 'full' }
 ];
 
 @NgModule({
