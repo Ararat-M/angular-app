@@ -34,7 +34,7 @@ export class AuthFormComponent {
   get emailControl() {
     return this.form.controls.email;
   }
-  
+
   get password(): string {
     return this.form.controls.password.value ?? '';
   }
@@ -43,7 +43,7 @@ export class AuthFormComponent {
     return this.form.controls.password;
   }
 
-  submit() { 
+  submit() {
     if (!this.emailControl.errors && !this.passwordControl.errors) {
       if (!this.authService.login(this.email, this.password)) {
         this.snackbar.open('неверный email или пароль', '', {

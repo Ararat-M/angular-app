@@ -10,7 +10,7 @@ export class PostListComponent implements OnInit {
   constructor(
     public postService: PostService
   ) { }
-  
+
   loading = true;
 
   ngOnInit(): void {

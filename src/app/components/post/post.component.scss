@@ -1,14 +1,17 @@
 .post {
-  background-color: rgba( 84 133 183 / 20%);
-  cursor: pointer; 
-  
+  background-color: rgb(84 133 183 / 20%);
+  cursor: pointer;
+
   &:hover {
-    background-color: rgba( 117 186 255 / 30%);
+    background-color: rgb(117 186 255 / 30%);
   }
 }
 
 .post-link {
-  padding: 12px 16px;
   display: block;
-  height: 100%;
+  padding: 0.8rem 1.2rem;
+}
+
+.post-title {
+  margin: 0;
 }

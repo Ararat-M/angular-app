@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  selector: 'app-head',
+  templateUrl: './head.component.html',
+  styleUrls: ['./head.component.scss']
 })
-export class NavigationComponent {
+export class HeadComponent {
 
   constructor(
     public authService: AuthService

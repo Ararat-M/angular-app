@@ -20,6 +20,10 @@ select {
   font: inherit;
 }
 
+ul {
+  list-style-type: none;
+}
+
 button {
   border: none;
   background: none;
@@ -40,6 +44,8 @@ a {
   text-align: center;
 
     &.snackbar-error {
-      --mdc-snackbar-supporting-text-color: rgb(209, 31, 31);
+      --mdc-snackbar-supporting-text-color: rgb(209 31 31);
+      --mdc-snackbar-container-color: #3e3e3e;
+      --mat-snack-bar-button-color: #dedede
     }
 }
