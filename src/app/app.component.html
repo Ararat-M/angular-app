@@ -1,3 +1,5 @@
 <app-head></app-head>
-<mat-progress-spinner style="margin: 30px auto;" mode="indeterminate" *ngIf="loadingRouteConfig"></mat-progress-spinner>
-<router-outlet></router-outlet>
+<mat-progress-spinner style="margin: 30px auto;" mode="indeterminate" *ngIf="loadingRouteConfig else content"></mat-progress-spinner>
+<ng-template #content>
+  <router-outlet></router-outlet>
+</ng-template>

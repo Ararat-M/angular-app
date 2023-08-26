@@ -13,7 +13,7 @@
       </a>
     </div>
 
-    <div class="post-details">
+    <div *ngIf="post" class="post-details">
       <span class="post-user-id"> Пользователь {{ post.userId }} </span>
       <h1 class="post-title"> {{ post.title }} </h1>
       <p class="post-body"> {{ post.body }} </p>

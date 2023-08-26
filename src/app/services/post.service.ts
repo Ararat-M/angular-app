@@ -16,7 +16,7 @@ export class PostService {
 
   posts: IPost[] = [];
   isError = false;
-  url = 'https://jsonplaceholder.typicode.com/posts';
+  url = 'https://jsonplaceholder.typicode.com/pots';
 
   private handleError(error: HttpErrorResponse) {
     this.isError = true;
@@ -28,7 +28,7 @@ export class PostService {
         `Backend returned code ${error.status}, body was: `, error.error);
     }
 
-    this.snackbar.open(error.message, 'закрыть', {
+    this.snackbar.open(`Ошибка: ${error.message}`, 'закрыть', {
       panelClass: ['snackbar-error']
     });
 
